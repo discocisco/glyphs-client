@@ -27,11 +27,21 @@ const onChangePasswordError = (responseData) => {
   $('#user-message').html('Error on change password!')
 }
 
+const onSignOutSuccess = () => {
+  $('#user-message').html(`Successfully signed out of: ${store.user.email}`)
+}
+
+const onSignOutError = () => {
+  $('#user-message').html('Error on sign out!')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpError,
   onSignInSuccess,
   onSignInError,
   onChangePasswordSuccess,
-  onChangePasswordError
+  onChangePasswordError,
+  onSignOutSuccess,
+  onSignOutError
 }
