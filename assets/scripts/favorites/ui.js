@@ -3,8 +3,8 @@
 const store = require('../store.js')
 
 const onIndexFavoritesSuccess = (responseData) => {
+  $('#favorite-display').html('')
   store.favorites = responseData.favorites
-  console.log(store.favorites)
   store.favorites.forEach(favorite => {
     const favHTML = (`
       <div class="row col-12">

@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../store.js')
+let store = require('../store.js')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').html('Successfully signed up!')
@@ -29,6 +29,8 @@ const onChangePasswordError = (responseData) => {
 
 const onSignOutSuccess = () => {
   $('#user-message').html(`Successfully signed out of: ${store.user.email}`)
+  store.user = null
+  store.favorites = null
 }
 
 const onSignOutError = () => {
