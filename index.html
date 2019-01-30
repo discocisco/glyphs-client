@@ -11,33 +11,44 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h3>User Message</h3>
-      <div id="user-message"></div>
+    <body class="container">
+      <h2>Glyphs</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>User Message</h4>
+          <div id="user-message"></div>
 
-      <h3>Sign Up Form</h3>
-      <form id="signup-form">
-        <input type="email" name="credentials[email]" placeholder="your.email@example.com">
-        <input type="password" name="credentials[password]" placeholder="********">
-        <input type="password" name="credentials[password_confirmation]" placeholder="********">
-        <button type="submit">Submit</button>
-      </form>
+          <h4>Sign Up Form</h4>
+          <form id="signup-form">
+            <input type="email" name="credentials[email]" placeholder="your.email@example.com">
+            <input type="password" name="credentials[password]" placeholder="********">
+            <input type="password" name="credentials[password_confirmation]" placeholder="********">
+            <button type="submit">Submit</button>
+          </form>
 
-      <h3>Sign In Form</h3>
-      <form id="signin-form">
-        <input type="email" name="credentials[email]" placeholder="your.email@example.com">
-        <input type="password" name="credentials[password]" placeholder="********">
-        <button type="submit">Submit</button>
-      </form>
+          <h4>Sign In Form</h4>
+          <form id="signin-form">
+            <input type="email" name="credentials[email]" placeholder="your.email@example.com">
+            <input type="password" name="credentials[password]" placeholder="********">
+            <button type="submit">Submit</button>
+          </form>
 
-      <h3>Change Password Form</h3>
-      <form id="changepw-form">
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit">Submit</button>
-      </form>
+          <h4>Change Password Form</h4>
+          <form id="changepw-form">
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button type="submit">Submit</button>
+          </form>
 
-      <h3>Sign Out</h3>
-      <button type="button" id="signout-btn">Sign-Out</button>
+          <h4>Sign Out</h4>
+          <button type="button" id="signout-btn">Sign-Out</button>
+        </div>
+
+        <div class="col-md-6">
+          <h3>Fonts</h3>
+          <h4>View Fonts</h4>
+          <button type="button" id="fonts-index">View All</button>
+        </div>
+      </div>
     </body>
 </html>
