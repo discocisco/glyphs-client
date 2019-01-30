@@ -4,7 +4,6 @@ const store = require('../store.js')
 
 const onIndexFontsSuccess = (responseData) => {
   $('#font-display').html('')
-  console.log(responseData.fonts)
   store.fonts = responseData.fonts
   store.fonts.forEach(font => {
     const fontHTML = (`
