@@ -1,4 +1,4 @@
-curl "https://font-glyphs.herokuapp.com/change-password" \
+curl "localhost:4741/change-password" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \

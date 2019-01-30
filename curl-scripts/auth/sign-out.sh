@@ -1,4 +1,4 @@
-curl "https://font-glyphs.herokuapp.com/sign-out" \
+curl "localhost:4741/sign-out" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}" \
