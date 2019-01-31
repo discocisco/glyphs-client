@@ -34,11 +34,10 @@ const createFavorite = (formData) => {
   })
 }
 
-const updateFavorite = (form) => {
-  const formData = form
+const updateFavorite = (formData) => {
   formData.favorite.user_id = store.user.id
   return $.ajax({
-    url: config.apiUrl + '/favorites/' + form.id,
+    url: config.apiUrl + '/favorites/' + formData.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -47,9 +46,20 @@ const updateFavorite = (form) => {
   })
 }
 
+const deleteFavorite = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/favorites/' + formData.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   indexFavorites,
   showFavorite,
   createFavorite,
-  updateFavorite
+  updateFavorite,
+  deleteFavorite
 }
