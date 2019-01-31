@@ -1,6 +1,6 @@
 'use strict'
 
-let store = require('../store.js')
+const store = require('../store.js')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').html('Successfully signed up!')
