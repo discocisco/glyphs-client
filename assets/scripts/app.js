@@ -17,4 +17,5 @@ $(() => {
   $('#fonts-index').on('click', fontEvents.onIndexFonts)
   $('#favorites-index').on('click', favoriteEvents.onIndexFavorites)
   $('#show-favorite').on('submit', favoriteEvents.onShowFavorite)
+  $('#create-favorite').on('submit', favoriteEvents.onCreateFavorite)
 })

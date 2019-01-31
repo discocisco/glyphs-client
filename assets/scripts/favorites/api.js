@@ -14,7 +14,6 @@ const indexFavorites = () => {
 }
 
 const showFavorite = (favID) => {
-  console.log('favID is', favID)
   return $.ajax({
     url: config.apiUrl + '/favorites/' + favID,
     method: 'GET',
@@ -24,7 +23,19 @@ const showFavorite = (favID) => {
   })
 }
 
+const createFavorite = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/favorites/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   indexFavorites,
-  showFavorite
+  showFavorite,
+  createFavorite
 }
