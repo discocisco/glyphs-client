@@ -22,6 +22,14 @@ $(() => {
   $('#create-favorite').on('submit', favoriteEvents.onCreateFavorite)
   $('#update-favorite').on('submit', favoriteEvents.onUpdateFavorite)
   $('#delete-favorite').on('submit', favoriteEvents.onDeleteFavorite)
+  $('select').change(function () {
+    let str = ''
+    $('select option:selected').each(function () {
+      str = $(this).text().split(' ').join('-').toLowerCase()
+    })
+    $('#test-font').removeClass()
+    $('#test-font').addClass(str)
+  })
   $('#keyboard').keyup(function (event) {
     output.text(input.text())
   })
