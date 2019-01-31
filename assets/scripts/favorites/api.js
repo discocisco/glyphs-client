@@ -34,8 +34,22 @@ const createFavorite = (formData) => {
   })
 }
 
+const updateFavorite = (form) => {
+  const formData = form
+  formData.favorite.user_id = store.user.id
+  return $.ajax({
+    url: config.apiUrl + '/favorites/' + form.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   indexFavorites,
   showFavorite,
-  createFavorite
+  createFavorite,
+  updateFavorite
 }

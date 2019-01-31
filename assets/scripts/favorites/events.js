@@ -27,8 +27,17 @@ const onCreateFavorite = (event) => {
     .catch(ui.onCreateFavoriteError)
 }
 
+const onUpdateFavorite = (event) => {
+  event.preventDefault()
+  const form = getFormFields(event.target)
+  api.updateFavorite(form)
+    .then(ui.onUpdateFavoriteSuccess)
+    .catch(ui.onUpdateFavoriteError)
+}
+
 module.exports = {
   onIndexFavorites,
   onShowFavorite,
-  onCreateFavorite
+  onCreateFavorite,
+  onUpdateFavorite
 }

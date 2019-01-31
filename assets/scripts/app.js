@@ -18,4 +18,5 @@ $(() => {
   $('#favorites-index').on('click', favoriteEvents.onIndexFavorites)
   $('#show-favorite').on('submit', favoriteEvents.onShowFavorite)
   $('#create-favorite').on('submit', favoriteEvents.onCreateFavorite)
+  $('#update-favorite').on('submit', favoriteEvents.onUpdateFavorite)
 })
