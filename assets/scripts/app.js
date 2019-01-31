@@ -16,4 +16,5 @@ $(() => {
   $('#signout-btn').on('click', authEvents.onSignOut)
   $('#fonts-index').on('click', fontEvents.onIndexFonts)
   $('#favorites-index').on('click', favoriteEvents.onIndexFavorites)
+  $('#show-favorite').on('submit', favoriteEvents.onShowFavorite)
 })

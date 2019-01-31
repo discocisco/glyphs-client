@@ -31,6 +31,7 @@ const onSignOutSuccess = () => {
   $('#user-message').html(`Successfully signed out of: ${store.user.email}`)
   store.user = null
   store.favorites = null
+  store.favorite = null
 }
 
 const onSignOutError = () => {
