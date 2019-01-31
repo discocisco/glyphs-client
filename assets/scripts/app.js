@@ -8,6 +8,8 @@ const favoriteEvents = require('./favorites/events.js')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const input = $('#font-input')
+const output = $('#test-font')
 
 $(() => {
   $('#signup-form').on('submit', authEvents.onSignUp)
@@ -20,4 +22,7 @@ $(() => {
   $('#create-favorite').on('submit', favoriteEvents.onCreateFavorite)
   $('#update-favorite').on('submit', favoriteEvents.onUpdateFavorite)
   $('#delete-favorite').on('submit', favoriteEvents.onDeleteFavorite)
+  $('#keyboard').keyup(function (event) {
+    output.text(input.text())
+  })
 })
