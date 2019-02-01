@@ -6,11 +6,16 @@ const ui = require('./ui.js')
 
 const onIndexFonts = (event) => {
   event.preventDefault()
-  api.indexFonts()
-    .then(ui.onIndexFontsSuccess)
+  $('#font-display').toggle()
+}
+
+const onPreloadFonts = () => {
+  api.preloadFonts()
+    .then(ui.onPreloadSuccess)
     .catch(ui.onIndexFontsError)
 }
 
 module.exports = {
-  onIndexFonts
+  onIndexFonts,
+  onPreloadFonts
 }

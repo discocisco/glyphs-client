@@ -12,8 +12,10 @@ const input = $('#font-input')
 const output = $('#test-font')
 
 $('.signed_in').hide()
+$('#font-display').hide()
 
 $(() => {
+  fontEvents.onPreloadFonts()
   $('#signup-form').on('submit', authEvents.onSignUp)
   $('#signin-form').on('submit', authEvents.onSignIn)
   $('#changepw-form').on('submit', authEvents.onChangePassword)

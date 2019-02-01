@@ -11,172 +11,175 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container">
-      <section class="header">
-        <h1 class="appname">Glyphs</h1>
-        <div class="">
-          <!-- <h4>User Message</h4> -->
-          <div id="user-message"></div>
-        </div>
-      </section>
-
-      <section class="authentication row">
-        <div class="col-12 signin-form signed_out">
-          <form id="signin-form">
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <button type="submit" class="btn btn-primary text-light">Log in</button>
-          </form>
-        </div>
-
-        <!-- Button trigger modal -->
-        <div class="col-12">
-          <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
-            Create A Profile!
-          </button>
-        </div>
-
-        <div class="col-12 signed_in">
-          <button type="button" id="changepw-btn" class="changepw-btn btn btn-secondary" data-toggle="modal" data-target="#changepwModalCenter">
-            Change Password
-          </button>
-          <button type="button" id="signout-btn" class="signout-btn btn btn-danger">Sign-Out</button>
-        <!-- </div>
-
-        <div class="col-12 signed_in"> -->
-        </div>
-      </section>
-
-      <div>
-        <div class="form-group">
-          <!-- <label for="select-font">Select font:</label> -->
-          <select class="form-control" id="select-font">
-            <option disabled selected>Choose a font to try out...</option>
-            <option>Open Sans Condensed</option>
-            <option>Satisfy</option>
-            <option>Orbitron</option>
-            <option>Major Mono Display</option>
-            <option>Akronim</option>
-            <option>Bungee Outline</option>
-            <option>Bungee Shade</option>
-            <option>Fascinate Inline</option>
-            <option>Monofett</option>
-            <option>Montserrat Subrayada</option>
-          </select>
-        </div>
-        <div id="keyboard" class="row">
-          <div id="font-input" class="col-5 font-view-tool" contenteditable="true">Sample your font.</div>
-          <div id="test-font" class="col-6 test-font font-view-tool"></div>
-          <button type="button" class="col-1 btn btn-secondary">Save!</button>
-        </div>
-      </div>
-
-      <div class="signed_in">
-        <h4>View Favorites</h4>
-        <button type="button" id="favorites-index">View All</button>
-      </div>
-
-      <div class="signed_in">
-        <h4>View a Favorite</h4>
-        <form id="show-favorite">
-          <input type="number" name="favorites[id]" placeholder="Favorite ID">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-
-      <div class="signed_in">
-        <h4>Add to My Favorites</h4>
-        <form id="create-favorite">
-          <input type="number" name="favorite[font_id]" placeholder="Font ID">
-          <input type="text" name="favorite[project]" placeholder="Project">
-          <button type="submit">Add</button>
-        </form>
-      </div>
-
-      <div class="signed_in">
-        <h4>Change a Favorite</h4>
-        <form id="update-favorite">
-          <input type="number" name="id" placeholder="Favorite ID">
-          <input type="number" name="favorite[font_id]" placeholder="Font ID">
-          <input type="text" name="favorite[project]" placeholder="Project">
-          <button type="submit">Update</button>
-        </form>
-      </div>
-
-      <div class="signed_in">
-        <h4>Remove a Favorite</h4>
-        <form id="delete-favorite">
-          <input type="number" name="id" placeholder="Favorite ID">
-          <button type="submit">Remove</button>
-        </form>
-      </div>
-
-      <div class="signed_in">
-        <h3>Favorites</h3>
-        <h4>Favorite Display</h4>
-        <div id="favorite-display" class="row"></div>
-      </div>
-
-      <div>
-        <h3>Fonts<button type="button" id="fonts-index" class="btn btn-success">View All</button></h3>
-        <div id="font-display" class="row"></div>
-      </div>
-
-      <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-dark" id="signupModalCenterTitle">Sign Up Form</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form id="signup-form">
-              <div class="modal-body">
-                <input type="email" name="credentials[email]" placeholder="Email">
-                <input type="password" name="credentials[password]" placeholder="Password">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                <!-- <button type="submit">Submit</button> -->
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-          </form>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1 class="appname">Glyphs</h1>
+          <div class="">
+            <!-- <h4>User Message</h4> -->
+            <div id="user-message"></div>
           </div>
         </div>
-      </div>
 
-      <div class="modal fade" id="changepwModalCenter" tabindex="-1" role="dialog" aria-labelledby="changepwModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-dark" id="changepwModalCenterTitle">Change Password</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form id="changepw-form">
-              <div class="modal-body">
-                <input type="password" name="passwords[old]" placeholder="Old Password">
-                <input type="password" name="passwords[new]" placeholder="New Password">
-                <!-- <button type="submit">Submit</button> -->
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-          </form>
+        <div class="authentication row">
+          <div class="col-12 signin-form signed_out">
+            <form id="signin-form">
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <button type="submit" class="btn btn-primary text-light">Log in</button>
+            </form>
+          </div>
+
+          <!-- Button trigger modal -->
+          <div class="col-12">
+            <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
+              Create A Profile!
+            </button>
+          </div>
+
+          <div class="col-12 signed_in">
+            <button type="button" id="changepw-btn" class="changepw-btn btn btn-secondary" data-toggle="modal" data-target="#changepwModalCenter">
+              Change Password
+            </button>
+            <button type="button" id="signout-btn" class="signout-btn btn btn-danger">Sign-Out</button>
+          <!-- </div>
+
+          <div class="col-12 signed_in"> -->
           </div>
         </div>
+
+        <div>
+          <div class="form-group">
+            <!-- <label for="select-font">Select font:</label> -->
+            <select class="form-control" id="select-font">
+              <option disabled selected>Choose a font to try out...</option>
+              <option>Open Sans Condensed</option>
+              <option>Satisfy</option>
+              <option>Orbitron</option>
+              <option>Major Mono Display</option>
+              <option>Akronim</option>
+              <option>Bungee Outline</option>
+              <option>Bungee Shade</option>
+              <option>Fascinate Inline</option>
+              <option>Monofett</option>
+              <option>Montserrat Subrayada</option>
+            </select>
+          </div>
+          <div id="keyboard" class="row">
+            <div id="font-input" class="col-5 font-view-tool" contenteditable="true">Sample your font.</div>
+            <div id="test-font" class="col-6 test-font font-view-tool"></div>
+            <button type="button" class="col-1 btn btn-secondary">Save!</button>
+          </div>
+        </div>
+
+        <div class="signed_in">
+          <h4>View Favorites</h4>
+          <button type="button" id="favorites-index">View All</button>
+        </div>
+
+        <div class="signed_in">
+          <h4>View a Favorite</h4>
+          <form id="show-favorite">
+            <input type="number" name="favorites[id]" placeholder="Favorite ID">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div class="signed_in">
+          <h4>Add to My Favorites</h4>
+          <form id="create-favorite">
+            <input type="number" name="favorite[font_id]" placeholder="Font ID">
+            <input type="text" name="favorite[project]" placeholder="Project">
+            <button type="submit">Add</button>
+          </form>
+        </div>
+
+        <div class="signed_in">
+          <h4>Change a Favorite</h4>
+          <form id="update-favorite">
+            <input type="number" name="id" placeholder="Favorite ID">
+            <input type="number" name="favorite[font_id]" placeholder="Font ID">
+            <input type="text" name="favorite[project]" placeholder="Project">
+            <button type="submit">Update</button>
+          </form>
+        </div>
+
+        <div class="signed_in">
+          <h4>Remove a Favorite</h4>
+          <form id="delete-favorite">
+            <input type="number" name="id" placeholder="Favorite ID">
+            <button type="submit">Remove</button>
+          </form>
+        </div>
+
+        <div class="signed_in">
+          <h3>Favorites</h3>
+          <h4>Favorite Display</h4>
+          <div id="favorite-display" class="row"></div>
+        </div>
+
+        <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-dark" id="signupModalCenterTitle">Sign Up Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="signup-form">
+                <div class="modal-body">
+                  <input type="email" name="credentials[email]" placeholder="Email">
+                  <input type="password" name="credentials[password]" placeholder="Password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <!-- <button type="submit">Submit</button> -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="changepwModalCenter" tabindex="-1" role="dialog" aria-labelledby="changepwModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-dark" id="changepwModalCenterTitle">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="changepw-form">
+                <div class="modal-body">
+                  <input type="password" name="passwords[old]" placeholder="Old Password">
+                  <input type="password" name="passwords[new]" placeholder="New Password">
+                  <!-- <button type="submit">Submit</button> -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="p-3 mb-2 bg-gradient-primary text-white">.bg-gradient-primary</div>
+        <div class="p-3 mb-2 bg-gradient-secondary text-white">.bg-gradient-secondary</div>
+        <div class="p-3 mb-2 bg-gradient-success text-white">.bg-gradient-success</div>
+        <div class="p-3 mb-2 bg-gradient-danger text-white">.bg-gradient-danger</div>
+        <div class="p-3 mb-2 bg-gradient-warning text-dark">.bg-gradient-warning</div>
+        <div class="p-3 mb-2 bg-gradient-info text-white">.bg-gradient-info</div>
+        <div class="p-3 mb-2 bg-gradient-light text-dark">.bg-gradient-light</div>
+        <div class="p-3 mb-2 bg-gradient-dark text-white">.bg-gradient-dark</div> -->
+        <footer>
+          <div class="all-fonts container-fluid padding">
+            <button type="button" id="fonts-index" class="btn btn-success">All Fonts</button>
+            <div id="font-display" class="row"></div>
+          </div>
+        </footer>
       </div>
-      <!-- <div class="p-3 mb-2 bg-gradient-primary text-white">.bg-gradient-primary</div>
-      <div class="p-3 mb-2 bg-gradient-secondary text-white">.bg-gradient-secondary</div>
-      <div class="p-3 mb-2 bg-gradient-success text-white">.bg-gradient-success</div>
-      <div class="p-3 mb-2 bg-gradient-danger text-white">.bg-gradient-danger</div>
-      <div class="p-3 mb-2 bg-gradient-warning text-dark">.bg-gradient-warning</div>
-      <div class="p-3 mb-2 bg-gradient-info text-white">.bg-gradient-info</div>
-      <div class="p-3 mb-2 bg-gradient-light text-dark">.bg-gradient-light</div>
-      <div class="p-3 mb-2 bg-gradient-dark text-white">.bg-gradient-dark</div> -->
     </body>
 </html>

@@ -3,7 +3,7 @@
 const config = require('../config.js')
 // const store = require('../store.js')
 
-const indexFonts = () => {
+const preloadFonts = () => {
   return $.ajax({
     url: config.apiUrl + '/fonts',
     method: 'GET'
@@ -11,5 +11,5 @@ const indexFonts = () => {
 }
 
 module.exports = {
-  indexFonts
+  preloadFonts
 }

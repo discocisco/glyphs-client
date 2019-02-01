@@ -2,13 +2,12 @@
 
 const store = require('../store.js')
 
-const onIndexFontsSuccess = (responseData) => {
-  $('#font-display').html('')
+const onPreloadSuccess = (responseData) => {
   store.fonts = responseData.fonts
   store.fonts.forEach(font => {
     const fontHTML = (`
-        <div class="col-6" data-fontId="${font.id}">${font.id}: ${font.name}
-        </div>`)
+      <div class="col-6" data-fontId="${font.id}">${font.id}: ${font.name}
+      </div>`)
     $('#font-display').append(fontHTML)
   })
 }
@@ -18,6 +17,6 @@ const onIndexFontsError = (responseData) => {
 }
 
 module.exports = {
-  onIndexFontsSuccess,
+  onPreloadSuccess,
   onIndexFontsError
 }
