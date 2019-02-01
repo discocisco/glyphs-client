@@ -19,23 +19,17 @@
       </div>
 
       <div class="signed_out">
-        <h4>Sign In Form</h4>
         <form id="signin-form">
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
-          <button type="submit">Submit</button>
+          <button type="submit" class="btn btn-primary text-light">Log in</button>
         </form>
       </div>
 
-      <div class="signed_out">
-        <h4>Sign Up Form</h4>
-        <form id="signup-form">
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
+        Create A Profile!
+      </button>
 
       <div class="signed_in">
         <h4>Change Password Form</h4>
@@ -83,7 +77,7 @@
         <div id="keyboard" class="row">
           <div id="font-input" class="col-5 font-view-tool" contenteditable="true">Sample your font.</div>
           <div id="test-font" class="col-6 test-font font-view-tool"></div>
-          <button type="button" class="col-1 btn btn-success">Save</button>
+          <button type="button" class="col-1 btn btn-secondary">Save!</button>
         </div>
       </div>
 
@@ -131,6 +125,31 @@
         <h3>Favorites</h3>
         <h4>Favorite Display</h4>
         <div id="favorite-display" class="row"></div>
+      </div>
+
+      <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-dark" id="signupModalCenterTitle">Sign Up Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="signup-form">
+              <div class="modal-body">
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <!-- <button type="submit">Submit</button> -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+          </div>
+        </div>
       </div>
       <!-- <div class="p-3 mb-2 bg-gradient-primary text-white">.bg-gradient-primary</div>
       <div class="p-3 mb-2 bg-gradient-secondary text-white">.bg-gradient-secondary</div>

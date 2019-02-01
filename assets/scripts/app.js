@@ -24,6 +24,9 @@ $(() => {
   $('#create-favorite').on('submit', favoriteEvents.onCreateFavorite)
   $('#update-favorite').on('submit', favoriteEvents.onUpdateFavorite)
   $('#delete-favorite').on('submit', favoriteEvents.onDeleteFavorite)
+  $('.modal').on('hidden.bs.modal', function () {
+    $(this).find('form').trigger('reset')
+  })
   $('select').change(function () {
     let str = ''
     $('select option:selected').each(function () {
