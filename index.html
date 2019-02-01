@@ -12,92 +12,124 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container">
-      <h2>Glyphs</h2>
-      <h4>User Message</h4>
-      <div id="user-message"></div>
-
-      <h4>Sign Up Form</h4>
-      <form id="signup-form">
-        <input type="email" name="credentials[email]" placeholder="your.email@example.com">
-        <input type="password" name="credentials[password]" placeholder="********">
-        <input type="password" name="credentials[password_confirmation]" placeholder="********">
-        <button type="submit">Submit</button>
-      </form>
-
-      <h4>Sign In Form</h4>
-      <form id="signin-form">
-        <input type="email" name="credentials[email]" placeholder="your.email@example.com">
-        <input type="password" name="credentials[password]" placeholder="********">
-        <button type="submit">Submit</button>
-      </form>
-
-      <h4>Change Password Form</h4>
-      <form id="changepw-form">
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit">Submit</button>
-      </form>
-
-      <h4>Sign Out</h4>
-      <button type="button" id="signout-btn">Sign-Out</button>
-
-      <h3>Fonts</h3>
-      <h4>View Fonts</h4>
-      <button type="button" id="fonts-index">View All</button>
-
-      <h4>Font Display</h4>
-      <div id="font-display" class="row"></div>
-
-      <h4>Test Font</h4>
-      <div class="form-group">
-        <label for="select-font">Select font:</label>
-        <select class="form-control" id="select-font">
-          <option selected>Choose a font</option>
-          <option>Open Sans Condensed</option>
-          <option>Satisfy</option>
-          <option>Orbitron</option>
-          <option>Major Mono Display</option>
-        </select>
-      </div>
-      <div id="keyboard" class="row">
-        <div id="font-input" class="col-6" contenteditable="true"></div>
-        <div id="test-font" class="col-6 test-font"></div>
+      <h1 id="appname">Glyphs</h1>
+      <div>
+        <h4>User Message</h4>
+        <div id="user-message"></div>
       </div>
 
-      <h4>View Favorites</h4>
-      <button type="button" id="favorites-index">View All</button>
+      <div class="signed_out">
+        <h4>Sign In Form</h4>
+        <form id="signin-form">
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
 
-      <h4>View a Favorite</h4>
-      <form id="show-favorite">
-        <input type="number" name="favorites[id]" placeholder="Favorite ID">
-        <button type="submit">Submit</button>
-      </form>
+      <div class="signed_out">
+        <h4>Sign Up Form</h4>
+        <form id="signup-form">
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
 
-      <h4>Add to My Favorites</h4>
-      <form id="create-favorite">
-        <input type="number" name="favorite[font_id]" placeholder="Font ID">
-        <input type="text" name="favorite[project]" placeholder="Project">
-        <button type="submit">Add</button>
-      </form>
+      <div class="signed_in">
+        <h4>Change Password Form</h4>
+        <form id="changepw-form">
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
 
-      <h4>Change a Favorite</h4>
-      <form id="update-favorite">
-        <input type="number" name="id" placeholder="Which Favorite ID?">
-        <input type="number" name="favorite[font_id]" placeholder="Font ID">
-        <input type="text" name="favorite[project]" placeholder="Project">
-        <button type="submit">Update</button>
-      </form>
+      <div class="signed_in">
+        <h4>Sign Out</h4>
+        <button type="button" id="signout-btn">Sign-Out</button>
+      </div>
 
-      <h4>Remove a Favorite</h4>
-      <form id="delete-favorite">
-        <input type="number" name="id" placeholder="Favorite ID">
-        <button type="submit">Remove</button>
-      </form>
+      <div>
+        <h3>Fonts</h3>
+        <!-- <h4>View Fonts</h4> -->
+        <button type="button" id="fonts-index">View All</button>
+      </div>
 
-    <div class="col-md-6 col-sm-12">
-      <h3>Favorites</h3>
-      <h4>Favorite Display</h4>
-      <div id="favorite-display" class="row"></div>
-    </div>
+      <div>
+        <!-- <h4>Font Display</h4> -->
+        <div id="font-display" class="row"></div>
+      </div>
+
+      <div>
+        <h4>Test Font</h4>
+        <div class="form-group">
+          <label for="select-font">Select font:</label>
+          <select class="form-control" id="select-font">
+            <option disabled selected>Choose a font...</option>
+            <option>Open Sans Condensed</option>
+            <option>Satisfy</option>
+            <option>Orbitron</option>
+            <option>Major Mono Display</option>
+            <option>Akronim</option>
+            <option>Bungee Outline</option>
+            <option>Bungee Shade</option>
+            <option>Fascinate Inline</option>
+            <option>Monofett</option>
+            <option>Montserrat Subrayada</option>
+          </select>
+        </div>
+        <div id="keyboard" class="row font-view-tool">
+          <div id="font-input" class="col-6 font-view-tool" contenteditable="true"></div>
+          <div id="test-font" class="col-6 test-font font-view-tool"></div>
+        </div>
+      </div>
+
+      <div class="signed_in">
+        <h4>View Favorites</h4>
+        <button type="button" id="favorites-index">View All</button>
+      </div>
+
+      <div class="signed_in">
+        <h4>View a Favorite</h4>
+        <form id="show-favorite">
+          <input type="number" name="favorites[id]" placeholder="Favorite ID">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="signed_in">
+        <h4>Add to My Favorites</h4>
+        <form id="create-favorite">
+          <input type="number" name="favorite[font_id]" placeholder="Font ID">
+          <input type="text" name="favorite[project]" placeholder="Project">
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div class="signed_in">
+        <h4>Change a Favorite</h4>
+        <form id="update-favorite">
+          <input type="number" name="id" placeholder="Favorite ID">
+          <input type="number" name="favorite[font_id]" placeholder="Font ID">
+          <input type="text" name="favorite[project]" placeholder="Project">
+          <button type="submit">Update</button>
+        </form>
+      </div>
+
+      <div class="signed_in">
+        <h4>Remove a Favorite</h4>
+        <form id="delete-favorite">
+          <input type="number" name="id" placeholder="Favorite ID">
+          <button type="submit">Remove</button>
+        </form>
+      </div>
+
+      <div class="signed_in">
+        <h3>Favorites</h3>
+        <h4>Favorite Display</h4>
+        <div id="favorite-display" class="row"></div>
+      </div>
     </body>
 </html>

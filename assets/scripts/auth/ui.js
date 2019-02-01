@@ -11,6 +11,8 @@ const onSignUpError = (responseData) => {
 }
 
 const onSignInSuccess = (responseData) => {
+  $('.signed_in').show()
+  $('.signed_out').hide()
   store.user = responseData.user
   $('#user-message').html(`Successfully signed in as: ${store.user.email}`)
 }
@@ -28,6 +30,8 @@ const onChangePasswordError = (responseData) => {
 }
 
 const onSignOutSuccess = () => {
+  $('.signed_in').hide()
+  $('.signed_out').show()
   $('#user-message').html(`Successfully signed out of: ${store.user.email}`)
   store.user = null
   store.favorites = null

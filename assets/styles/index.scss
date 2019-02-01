@@ -15,6 +15,36 @@
   font-family: 'Major Mono Display';
   src: url('public/Major_Mono_Display/MajorMonoDisplay-Regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Akronim';
+  src: url('public/Akronim/Akronim-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bungee Outline';
+  src: url('public/Bungee_Outline/BungeeOutline-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bungee Shade';
+  src: url('public/Bungee_Shade/BungeeShade-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Fascinate Inline';
+  src: url('public/Fascinate_Inline/FascinateInline-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Monofett';
+  src: url('public/Monofett/Monofett.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  src: url('public/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf') format('truetype');
+}
+
+#appname {
+  font-family: 'Montserrat Subrayada';
+  font-size: 8vmin;
+  text-align: center;
+}
 
 body {
   background-attachment: fixed;
@@ -22,6 +52,10 @@ body {
   background-position: center;
   background-size: cover;
   color: #FFFFFF;
+}
+
+.font-view-tool {
+  font-size: 5vmin;
 }
 
 .open-sans-condensed {
@@ -38,4 +72,28 @@ body {
 
 .major-mono-display {
   font-family: 'Major Mono Display';
+}
+
+.akronim {
+  font-family: 'Akronim';
+}
+
+.bungee-outline {
+  font-family: 'Bungee Outline';
+}
+
+.bungee-shade {
+  font-family: 'Bungee Shade';
+}
+
+.fascinate-inline {
+  font-family: 'Fascinate Inline';
+}
+
+.monofett {
+  font-family: 'Monofett';
+}
+
+.montserrat-subrayada {
+  font-family: 'Montserrat Subrayada';
 }

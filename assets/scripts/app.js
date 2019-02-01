@@ -11,6 +11,8 @@ const favoriteEvents = require('./favorites/events.js')
 const input = $('#font-input')
 const output = $('#test-font')
 
+$('.signed_in').hide()
+
 $(() => {
   $('#signup-form').on('submit', authEvents.onSignUp)
   $('#signin-form').on('submit', authEvents.onSignIn)
