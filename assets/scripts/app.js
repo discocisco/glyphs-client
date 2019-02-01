@@ -30,7 +30,7 @@ $(() => {
       str = $(this).text().split(' ').join('-').toLowerCase()
     })
     $('#test-font').removeClass()
-    $('#test-font').addClass(str)
+    $('#test-font').addClass('col-6 test-font font-view-tool ' + str)
   })
   $('#keyboard').keyup(function (event) {
     output.text(input.text())

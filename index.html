@@ -12,9 +12,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container">
-      <h1 id="appname">Glyphs</h1>
-      <div>
-        <h4>User Message</h4>
+      <h1 class="appname">Glyphs</h1>
+      <div class="">
+        <!-- <h4>User Message</h4> -->
         <div id="user-message"></div>
       </div>
 
@@ -51,7 +51,7 @@
         <button type="button" id="signout-btn">Sign-Out</button>
       </div>
 
-      <div>
+      <div class="">
         <h3>Fonts</h3>
         <!-- <h4>View Fonts</h4> -->
         <button type="button" id="fonts-index">View All</button>
@@ -65,9 +65,9 @@
       <div>
         <h4>Test Font</h4>
         <div class="form-group">
-          <label for="select-font">Select font:</label>
+          <!-- <label for="select-font">Select font:</label> -->
           <select class="form-control" id="select-font">
-            <option disabled selected>Choose a font...</option>
+            <option disabled selected>Choose a font to try out...</option>
             <option>Open Sans Condensed</option>
             <option>Satisfy</option>
             <option>Orbitron</option>
@@ -80,9 +80,10 @@
             <option>Montserrat Subrayada</option>
           </select>
         </div>
-        <div id="keyboard" class="row font-view-tool">
-          <div id="font-input" class="col-6 font-view-tool" contenteditable="true"></div>
+        <div id="keyboard" class="row">
+          <div id="font-input" class="col-5 font-view-tool" contenteditable="true">Sample your font.</div>
           <div id="test-font" class="col-6 test-font font-view-tool"></div>
+          <button type="button" class="col-1 btn btn-success">Save</button>
         </div>
       </div>
 
@@ -131,5 +132,13 @@
         <h4>Favorite Display</h4>
         <div id="favorite-display" class="row"></div>
       </div>
+      <!-- <div class="p-3 mb-2 bg-gradient-primary text-white">.bg-gradient-primary</div>
+      <div class="p-3 mb-2 bg-gradient-secondary text-white">.bg-gradient-secondary</div>
+      <div class="p-3 mb-2 bg-gradient-success text-white">.bg-gradient-success</div>
+      <div class="p-3 mb-2 bg-gradient-danger text-white">.bg-gradient-danger</div>
+      <div class="p-3 mb-2 bg-gradient-warning text-dark">.bg-gradient-warning</div>
+      <div class="p-3 mb-2 bg-gradient-info text-white">.bg-gradient-info</div>
+      <div class="p-3 mb-2 bg-gradient-light text-dark">.bg-gradient-light</div>
+      <div class="p-3 mb-2 bg-gradient-dark text-white">.bg-gradient-dark</div> -->
     </body>
 </html>
