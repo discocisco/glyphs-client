@@ -7,10 +7,8 @@ const onIndexFontsSuccess = (responseData) => {
   store.fonts = responseData.fonts
   store.fonts.forEach(font => {
     const fontHTML = (`
-      <div class="row col-12">
         <div class="col-6" data-fontId="${font.id}">${font.id}: ${font.name}
-        </div>
-      </div>`)
+        </div>`)
     $('#font-display').append(fontHTML)
   })
 }

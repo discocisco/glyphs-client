@@ -12,52 +12,42 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container">
-      <h1 class="appname">Glyphs</h1>
-      <div class="">
-        <!-- <h4>User Message</h4> -->
-        <div id="user-message"></div>
-      </div>
+      <section class="header">
+        <h1 class="appname">Glyphs</h1>
+        <div class="">
+          <!-- <h4>User Message</h4> -->
+          <div id="user-message"></div>
+        </div>
+      </section>
 
-      <div class="signed_out">
-        <form id="signin-form">
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <button type="submit" class="btn btn-primary text-light">Log in</button>
-        </form>
-      </div>
+      <section class="authentication row">
+        <div class="col-12 signin-form signed_out">
+          <form id="signin-form">
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <button type="submit" class="btn btn-primary text-light">Log in</button>
+          </form>
+        </div>
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
-        Create A Profile!
-      </button>
+        <!-- Button trigger modal -->
+        <div class="col-12">
+          <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
+            Create A Profile!
+          </button>
+        </div>
 
-      <div class="signed_in">
-        <h4>Change Password Form</h4>
-        <form id="changepw-form">
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        <div class="col-12 signed_in">
+          <button type="button" id="changepw-btn" class="changepw-btn btn btn-secondary" data-toggle="modal" data-target="#changepwModalCenter">
+            Change Password
+          </button>
+          <button type="button" id="signout-btn" class="signout-btn btn btn-danger">Sign-Out</button>
+        <!-- </div>
 
-      <div class="signed_in">
-        <h4>Sign Out</h4>
-        <button type="button" id="signout-btn">Sign-Out</button>
-      </div>
-
-      <div class="">
-        <h3>Fonts</h3>
-        <!-- <h4>View Fonts</h4> -->
-        <button type="button" id="fonts-index">View All</button>
-      </div>
+        <div class="col-12 signed_in"> -->
+        </div>
+      </section>
 
       <div>
-        <!-- <h4>Font Display</h4> -->
-        <div id="font-display" class="row"></div>
-      </div>
-
-      <div>
-        <h4>Test Font</h4>
         <div class="form-group">
           <!-- <label for="select-font">Select font:</label> -->
           <select class="form-control" id="select-font">
@@ -127,6 +117,11 @@
         <div id="favorite-display" class="row"></div>
       </div>
 
+      <div>
+        <h3>Fonts<button type="button" id="fonts-index" class="btn btn-success">View All</button></h3>
+        <div id="font-display" class="row"></div>
+      </div>
+
       <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -141,6 +136,30 @@
                 <input type="email" name="credentials[email]" placeholder="Email">
                 <input type="password" name="credentials[password]" placeholder="Password">
                 <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <!-- <button type="submit">Submit</button> -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="changepwModalCenter" tabindex="-1" role="dialog" aria-labelledby="changepwModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-dark" id="changepwModalCenterTitle">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="changepw-form">
+              <div class="modal-body">
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
                 <!-- <button type="submit">Submit</button> -->
               </div>
               <div class="modal-footer">
