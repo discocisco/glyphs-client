@@ -15,32 +15,57 @@ $theme-colors: (
 @import './typography';
 @import './theme';
 
+.header {
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 10px 5px;
+}
+
+.authentification {
+  justify-content: flex-end;
+  text-align: right;
+
+  & .signin-form {
+    text-align: right;
+  }
+}
+
+.container {
+  color: $white;
+}
+
 .appname {
   font-family: 'Montserrat Subrayada';
-  font-size: 8vmin;
+  font-size: 12vmin;
   text-align: center;
   text-shadow: 1px 2px 10px $pink;
 }
+//
+// body,
+// html {
+//   height: 100%;
+// }
+//
+// .container {
+//   display: grid;
+//   min-height: 100%;
+//   overflow: hidden;
+// }
+//
+// #sidebar {
+//   align-self: flex-end;
+//   text-align: center;
+// }
+//
+// div {
+//   border: 1px solid $black;
+// }
 
 body {
   background-attachment: fixed;
   background-image: url('public/img/TheHelixNebula.png');
   background-position: center;
   background-size: cover;
-  color: $white;
-  text-align: center;
-}
-
-input {
-  background-color: $black-30;
-  color: $white;
-}
-
-select {
-  &:hover {
-    background-color: $maya-blue;
-    color: $white;
-  }
 }
 
 .font-view-tool {
@@ -49,6 +74,6 @@ select {
   font-size: 4vmin;
 }
 
-.signin-form {
-  text-align: center;
-}
+// .signin-form {
+//   text-align: center;
+// }
