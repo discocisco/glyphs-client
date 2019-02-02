@@ -1,15 +1,15 @@
 'use strict'
 
 const store = require('../store.js')
+const selectFontsTemplate = require('../templates/selectFontsTemplate.handlebars')
+const allFontsTemplate = require('../templates/allFontsTemplate.handlebars')
 
 const onPreloadSuccess = (responseData) => {
   store.fonts = responseData.fonts
-  store.fonts.forEach(font => {
-    const fontHTML = (`
-      <div class="col-6" data-fontId="${font.id}">${font.id}: ${font.name}
-      </div>`)
-    $('#font-display').append(fontHTML)
-  })
+  const selectFontsHTML = selectFontsTemplate({ fonts: store.fonts })
+  $('#select-font').append(selectFontsHTML)
+  const allFontsHTML = allFontsTemplate({ fonts: store.fonts })
+  $('#font-display').html(allFontsHTML)
 }
 
 const onIndexFontsError = (responseData) => {

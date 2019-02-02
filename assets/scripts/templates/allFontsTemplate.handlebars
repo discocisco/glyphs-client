@@ -1,0 +1,5 @@
+{{#each fonts as |font|}}
+  <div class="col-3" data-fontId="{{font.id}}">
+    {{font.id}}: <span class="{{classDowncase font.name}}">{{font.name}}</span>
+  </div>
+{{/each}}
