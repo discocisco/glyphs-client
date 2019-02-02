@@ -1,80 +1,178 @@
 @font-face {
-  font-family: 'Open Sans Condensed';
-  src: url('public/Open_Sans_Condensed/OpenSansCondensed-Light.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Satisfy';
-  src: url('public/Satisfy/Satisfy-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Orbitron';
-  src: url('public/Orbitron/Orbitron-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Major Mono Display';
-  src: url('public/Major_Mono_Display/MajorMonoDisplay-Regular.ttf') format('truetype');
-}
-@font-face {
   font-family: 'Akronim';
   src: url('public/Akronim/Akronim-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Bungee Outline';
-  src: url('public/Bungee_Outline/BungeeOutline-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Bungee Shade';
-  src: url('public/Bungee_Shade/BungeeShade-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Fascinate Inline';
-  src: url('public/Fascinate_Inline/FascinateInline-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Monofett';
-  src: url('public/Monofett/Monofett.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat Subrayada';
-  src: url('public/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf') format('truetype');
-}
-
-.open-sans-condensed {
-  font-family: 'Open Sans Condensed';
-}
-
-.satisfy {
-  font-family: 'Satisfy';
-}
-
-.orbitron {
-  font-family: 'Orbitron';
-}
-
-.major-mono-display {
-  font-family: 'Major Mono Display';
 }
 
 .akronim {
   font-family: 'Akronim';
 }
 
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('public/Anonymous_Pro/AnonymousPro-Regular.ttf') format('truetype');
+}
+
+.anonymous-pro {
+  font-family: 'Anonymous Pro';
+}
+
+@font-face {
+  font-family: 'Bungee Outline';
+  src: url('public/Bungee_Outline/BungeeOutline-Regular.ttf') format('truetype');
+}
+
 .bungee-outline {
   font-family: 'Bungee Outline';
+}
+
+@font-face {
+  font-family: 'Bungee Shade';
+  src: url('public/Bungee_Shade/BungeeShade-Regular.ttf') format('truetype');
 }
 
 .bungee-shade {
   font-family: 'Bungee Shade';
 }
 
+@font-face {
+  font-family: 'Chelsea Market';
+  src: url('public/Chelsea_Market/ChelseaMarket-Regular.ttf') format('truetype');
+}
+
+.chelsea-market {
+  font-family: 'Chelsea Market';
+}
+
+@font-face {
+  font-family: 'Clicker Script';
+  src: url('public/Clicker_Script/ClickerScript-Regular.ttf') format('truetype');
+}
+
+.clicker-script {
+  font-family: 'Clicker Script';
+}
+
+@font-face {
+  font-family: 'Fascinate Inline';
+  src: url('public/Fascinate_Inline/FascinateInline-Regular.ttf') format('truetype');
+}
+
 .fascinate-inline {
   font-family: 'Fascinate Inline';
+}
+
+@font-face {
+  font-family: 'Fondamento';
+  src: url('public/Fondamento/Fondamento-Regular.ttf') format('truetype');
+}
+
+.fondamento {
+  font-family: 'Fondamento';
+}
+
+@font-face {
+  font-family: 'Major Mono Display';
+  src: url('public/Major_Mono_Display/MajorMonoDisplay-Regular.ttf') format('truetype');
+}
+
+.major-mono-display {
+  font-family: 'Major Mono Display';
+}
+
+@font-face {
+  font-family: 'Monofett';
+  src: url('public/Monofett/Monofett.ttf') format('truetype');
 }
 
 .monofett {
   font-family: 'Monofett';
 }
 
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  src: url('public/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf') format('truetype');
+}
+
 .montserrat-subrayada {
   font-family: 'Montserrat Subrayada';
+}
+
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('public/Noto_Serif_SC/NotoSerifSC-Regular.ttf') format('truetype');
+}
+
+.noto-serif-sc {
+  font-family: 'Noto Serif SC';
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('public/Open_Sans_Condensed/OpenSansCondensed-Light.ttf') format('truetype');
+}
+
+.open-sans-condensed {
+  font-family: 'Open Sans Condensed';
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('public/Orbitron/Orbitron-Regular.ttf') format('truetype');
+}
+
+.orbitron {
+  font-family: 'Orbitron';
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('public/Playfair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+.playfair-display {
+  font-family: 'Playfair Display';
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('public/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+.poppins {
+  font-family: 'Poppins';
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('public/PT_Sans_Narrow/PT_Sans-Narrow-Web-Regular.ttf') format('truetype');
+}
+
+.pt-sans-narrow {
+  font-family: 'PT Sans Narrow';
+}
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url('public/Satisfy/Satisfy-Regular.ttf') format('truetype');
+}
+
+.satisfy {
+  font-family: 'Satisfy';
+}
+
+@font-face {
+  font-family: 'Srisakdi';
+  src: url('public/Srisakdi/Srisakdi-Regular.ttf') format('truetype');
+}
+
+.srisakdi {
+  font-family: 'Srisakdi';
+}
+@font-face {
+  font-family: 'Staatliches';
+  src: url('public/Staatliches/Staatliches-Regular.ttf') format('truetype');
+}
+
+.staatliches {
+  font-family: 'Staatliches';
 }
