@@ -25,6 +25,7 @@ const onCreateFavorite = (event) => {
   const formData = getFormFields(event.target)
   api.createFavorite(formData)
     .then(ui.onCreateFavoriteSuccess)
+    .then((event) => api.indexFavorites().then(ui.onIndexFavoritesSuccess))
     .catch(ui.onCreateFavoriteError)
   $('#create-favorite').trigger('reset')
 }
@@ -34,6 +35,7 @@ const onUpdateFavorite = (event) => {
   const formData = getFormFields(event.target)
   api.updateFavorite(formData)
     .then(ui.onUpdateFavoriteSuccess)
+    .then((event) => api.indexFavorites().then(ui.onIndexFavoritesSuccess))
     .catch(ui.onUpdateFavoriteError)
   $('#update-favorite').trigger('reset')
 }
@@ -43,6 +45,7 @@ const onDeleteFavorite = (event) => {
   const favId = getFormFields(event.target)
   api.deleteFavorite(favId)
     .then(ui.onDeleteFavoriteSuccess)
+    .then((event) => api.indexFavorites().then(ui.onIndexFavoritesSuccess))
     .catch(ui.onDeleteFavoriteError)
   $('#delete-favorite').trigger('reset')
 }

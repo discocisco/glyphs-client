@@ -1,81 +1,38 @@
 'use strict'
 
 const store = require('../store.js')
+const allFavoritesTemplate = require('../templates/allFavoritesTemplate.handlebars')
+const showFavoriteTemplate = require('../templates/showFavoriteTemplate.handlebars')
+
+const onIndexFavoritesSuccess = (responseData) => {
+  store.favorites = responseData.favorites
+  const favHTML = allFavoritesTemplate({ favorites: store.favorites })
+  $('#fav-table').html(favHTML)
+}
 
 const onShowFavoriteSuccess = (responseData) => {
-  $('#favorite-display').html('')
   store.favorite = responseData.favorite
-  const favHTML = (`
-    <div class="col-12">
-      <h5>Name:</h5>
-      <p>${store.favorite.font.name}</p>
-    </div>
-    <div class="col-12">
-      <h5>Project:</h5>
-      <p>${store.favorite.project}</p>
-    </div>
-    <div class="col-12">
-      <h5>Type</h5>
-      <p>${store.favorite.font.font_type}</p>
-    </div>
-    <div class="col-12">
-      <h5>URL</h5>
-      <p>${store.favorite.font.location}</p>
-    </div>
-    `)
-  $('#favorite-display').append(favHTML)
+  console.log(store.favorite)
+  const favHTML = showFavoriteTemplate({ favorite: store.favorite })
+  $('#fav-table').html(favHTML)
 }
 
 const onCreateFavoriteSuccess = (responseData) => {
-  $('#favorite-display').html('')
   store.favorite = responseData.favorite
-  const favHTML = (`
-    <div class="col-12">
-      <h5>Name:</h5>
-      <p>${store.favorite.font.name}</p>
-    </div>
-    <div class="col-12">
-      <h5>Project:</h5>
-      <p>${store.favorite.project}</p>
-    </div>
-    <div class="col-12">
-      <h5>Type</h5>
-      <p>${store.favorite.font.font_type}</p>
-    </div>
-    <div class="col-12">
-      <h5>URL</h5>
-      <p>${store.favorite.font.location}</p>
-    </div>
-    `)
-  $('#favorite-display').append(favHTML)
+  $('#favorite-display').html('Created a new favorite font!')
 }
 
 const onUpdateFavoriteSuccess = (responseData) => {
-  $('#favorite-display').html('')
   store.favorite = responseData.favorite
-  const favHTML = (`
-    <div class="col-12">
-      <h5>Name:</h5>
-      <p>${store.favorite.font.name}</p>
-    </div>
-    <div class="col-12">
-      <h5>Project:</h5>
-      <p>${store.favorite.project}</p>
-    </div>
-    <div class="col-12">
-      <h5>Type</h5>
-      <p>${store.favorite.font.font_type}</p>
-    </div>
-    <div class="col-12">
-      <h5>URL</h5>
-      <p>${store.favorite.font.location}</p>
-    </div>
-    `)
-  $('#favorite-display').append(favHTML)
+  $('#favorite-display').html(`Updated favorite font to ${store.favorite.font.name}`)
 }
 
 const onDeleteFavoriteSuccess = () => {
   $('#favorite-display').html('Successfully removed favorite!')
+}
+
+const onIndexFavoritesError = (responseData) => {
+  $('#favorite-display').html('Error on indexing favorites!')
 }
 
 const onShowFavoriteError = (responseData) => {
@@ -95,6 +52,8 @@ const onDeleteFavoriteError = (responseData) => {
 }
 
 module.exports = {
+  onIndexFavoritesSuccess,
+  onIndexFavoritesError,
   onShowFavoriteSuccess,
   onShowFavoriteError,
   onCreateFavoriteSuccess,

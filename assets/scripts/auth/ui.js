@@ -24,10 +24,6 @@ const onIndexFavoritesSuccess = (responseData) => {
   $('#fav-table').html(favHTML)
 }
 
-const onIndexFavoritesError = (responseData) => {
-  $('#favorite-display').html('Error on indexing favorites!')
-}
-
 const onSignInError = (responseData) => {
   $('#user-message').html('Error on sign in!')
 }
@@ -62,6 +58,5 @@ module.exports = {
   onChangePasswordError,
   onSignOutSuccess,
   onSignOutError,
-  onIndexFavoritesSuccess,
-  onIndexFavoritesError
+  onIndexFavoritesSuccess
 }
