@@ -12,14 +12,18 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <!--Main Content-->
       <div class="container-fluid">
+        <!--Authentificaion row-->
         <div class="header row">
+          <!--Creating Profile section-->
           <div class="profile-create col-12 col-md-6">
             <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
               Create A Profile!
             </button>
           </div>
 
+          <!--Signing in, out, changing password, and viewing favorites-->
           <div class="authentification col-12 col-md-6">
             <form id="signin-form" class="signin-form signed_out">
               <input type="email" name="credentials[email]" placeholder="Email">
@@ -37,31 +41,36 @@
           </div>
         </div>
 
-          <div class="row content">
-            <div class="col-12">
-              <h1 class="appname">Glyphs</h1>
-            </div>
-            <div id="user-message" class="col-12"></div>
+        <!--Application title-->
+        <div class="row content">
+          <div class="col-12">
+            <h1 class="appname">Glyphs</h1>
           </div>
-
-          <div id="keyboard" class="row">
-            <div class="form-group col-12 col-md-3">
-              <select class="form-control btn-light" id="select-font">
-                <option disabled selected>Choose a font to try out...</option>
-              </select>
-            </div>
-            <div id="font-input" class="col-12 col-md-3 font-view-tool" contenteditable="true">Sample your font.</div>
-            <div id="test-font" class="col-12 col-md-5 test-font font-view-tool"></div>
-            <div class="col-12 col-md-1 font-fav">
-              <button type="button" class="btn btn-secondary">Save!</button>
-            </div>
-          </div>
-
-          <div class="row footer-btn">
-            <button type="button" id="fonts-index" class="btn btn-dark text-light">All Fonts</button>
-          </div>
-          <div id="font-display" class="row footer all-fonts"></div>
+          <div id="user-message" class="col-12"></div>
         </div>
+
+        <!--Font viewing tool-->
+        <div id="keyboard" class="row">
+          <div class="form-group col-12 col-md-3">
+            <select class="form-control btn-light" id="select-font">
+              <option disabled selected>Choose a font to try out...</option>
+            </select>
+          </div>
+          <div id="font-input" class="col-12 col-md-3 font-view-tool" contenteditable="true">Sample your font.</div>
+          <div id="test-font" class="col-12 col-md-5 test-font font-view-tool"></div>
+          <div class="col-12 col-md-1 font-fav">
+            <button type="button" class="btn btn-secondary">Save!</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Footer displaying all fonts-->
+      <div class="container-fluid push-to-bottom">
+        <div class="row footer-btn">
+          <button type="button" id="fonts-index" class="btn btn-dark text-light">All Fonts</button>
+        </div>
+        <div id="font-display" class="row footer all-fonts"></div>
+      </div>
 
       <!-- Sign Up Modal -->
       <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
@@ -137,7 +146,8 @@
                 <tbody id="fav-table">
                 </tbody>
               </table>
-
+            </div>
+            <div class="modal-footer">
               <form id="show-favorite">
                 Show a Favorite
                 <input type="number" name="favorites[id]" placeholder="Favorite ID">
@@ -165,9 +175,6 @@
                 <input type="number" name="id" placeholder="Favorite ID">
                 <button type="submit" class="btn btn-primary text-light">Remove</button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
