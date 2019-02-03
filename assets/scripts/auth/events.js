@@ -19,6 +19,7 @@ const onSignIn = (event) => {
   const formData = getFormFields(event.target)
   api.signIn(formData)
     .then(ui.onSignInSuccess)
+    .then((event) => api.indexFavorites().then(ui.onIndexFavoritesSuccess))
     .catch(ui.onSignInError)
   $('#signin-form').trigger('reset')
 }

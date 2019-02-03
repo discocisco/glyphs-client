@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const allFavoritesTemplate = require('../templates/allFavoritesTemplate.handlebars')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').html('Successfully signed up!')
@@ -15,6 +16,16 @@ const onSignInSuccess = (responseData) => {
   $('.signed_out').hide()
   store.user = responseData.user
   $('#user-message').html(`Successfully signed in as: ${store.user.email}`)
+}
+
+const onIndexFavoritesSuccess = (responseData) => {
+  store.favorites = responseData.favorites
+  const favHTML = allFavoritesTemplate({ favorites: store.favorites })
+  $('#fav-table').html(favHTML)
+}
+
+const onIndexFavoritesError = (responseData) => {
+  $('#favorite-display').html('Error on indexing favorites!')
 }
 
 const onSignInError = (responseData) => {
@@ -50,5 +61,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordError,
   onSignOutSuccess,
-  onSignOutError
+  onSignOutError,
+  onIndexFavoritesSuccess,
+  onIndexFavoritesError
 }

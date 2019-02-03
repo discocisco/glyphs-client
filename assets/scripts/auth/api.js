@@ -19,6 +19,16 @@ const signIn = (formData) => {
   })
 }
 
+const indexFavorites = () => {
+  return $.ajax({
+    url: config.apiUrl + '/favorites',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const changePassword = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/change-password',
@@ -43,6 +53,7 @@ const signOut = () => {
 module.exports = {
   signUp,
   signIn,
+  indexFavorites,
   changePassword,
   signOut
 }

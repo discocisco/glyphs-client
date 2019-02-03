@@ -2,25 +2,6 @@
 
 const store = require('../store.js')
 
-const onIndexFavoritesSuccess = (responseData) => {
-  $('#favorite-display').html('')
-  store.favorites = responseData.favorites
-  store.favorites.forEach(favorite => {
-    const favHTML = (`
-      <div class="row col-12">
-        <div class="col-6" data-favoriteId="${favorite.id}">
-        ${favorite.id}: ${favorite.font.name} ${favorite.font.location}
-        </div>
-      </div>
-      `)
-    $('#favorite-display').append(favHTML)
-  })
-}
-
-const onIndexFavoritesError = (responseData) => {
-  $('#favorite-display').html('Error on indexing favorites!')
-}
-
 const onShowFavoriteSuccess = (responseData) => {
   $('#favorite-display').html('')
   store.favorite = responseData.favorite
@@ -43,10 +24,6 @@ const onShowFavoriteSuccess = (responseData) => {
     </div>
     `)
   $('#favorite-display').append(favHTML)
-}
-
-const onShowFavoriteError = (responseData) => {
-  $('#favorite-display').html('Error on showing favorite!')
 }
 
 const onCreateFavoriteSuccess = (responseData) => {
@@ -73,10 +50,6 @@ const onCreateFavoriteSuccess = (responseData) => {
   $('#favorite-display').append(favHTML)
 }
 
-const onCreateFavoriteError = (responseData) => {
-  $('#favorite-display').html('Error on creating favorite!')
-}
-
 const onUpdateFavoriteSuccess = (responseData) => {
   $('#favorite-display').html('')
   store.favorite = responseData.favorite
@@ -101,12 +74,20 @@ const onUpdateFavoriteSuccess = (responseData) => {
   $('#favorite-display').append(favHTML)
 }
 
-const onUpdateFavoriteError = (responseData) => {
-  $('#favorite-display').html('Error on updating favorite!')
-}
-
 const onDeleteFavoriteSuccess = () => {
   $('#favorite-display').html('Successfully removed favorite!')
+}
+
+const onShowFavoriteError = (responseData) => {
+  $('#favorite-display').html('Error on showing favorite!')
+}
+
+const onCreateFavoriteError = (responseData) => {
+  $('#favorite-display').html('Error on creating favorite!')
+}
+
+const onUpdateFavoriteError = (responseData) => {
+  $('#favorite-display').html('Error on updating favorite!')
 }
 
 const onDeleteFavoriteError = (responseData) => {
@@ -114,8 +95,6 @@ const onDeleteFavoriteError = (responseData) => {
 }
 
 module.exports = {
-  onIndexFavoritesSuccess,
-  onIndexFavoritesError,
   onShowFavoriteSuccess,
   onShowFavoriteError,
   onCreateFavoriteSuccess,

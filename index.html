@@ -123,11 +123,21 @@
               </button>
             </div>
             <div class="modal-body">
-              <div id="favorite-display" class="row"></div>
-
-              <button type="button" id="favorites-index" class="signed_in btn btn-primary text-light">
-                View My Favorites
-              </button>
+              <table class="table table-hover table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">ID#</th>
+                    <th scope="col">Font Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">URL</th>
+                  </tr>
+                </thead>
+                <tbody id="fav-table">
+                </tbody>
+              </table>
+              <div id="favorite-display" class="row">
+              </div>
 
               <form id="show-favorite">
                 Show a Favorite

@@ -1,0 +1,9 @@
+{{#each favorites as |fav|}}
+  <tr>
+    <th scope="row">{{fav.id}}</th>
+    <td class="{{classDowncase fav.font.name}}">{{fav.font.name}}</td>
+    <td>{{fav.font.font_type}}</td>
+    <td>{{fav.project}}</td>
+    <td><a href="{{fav.font.location}}" target="_blank">{{fav.font.name}}</a></td>
+  </tr>
+{{/each}}
