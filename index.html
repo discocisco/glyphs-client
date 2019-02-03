@@ -27,7 +27,9 @@
               <button type="submit" class="btn btn-primary text-light">Log in</button>
             </form>
 
-            <button type="button" id="favorites-index" class="signed_in btn btn-primary text-light" data-toggle="modal" data-target="#favoritesModalCenter">Favorites</button>
+            <button type="button" id="favorites-btn" class="signed_in btn btn-primary text-light" data-toggle="modal" data-target="#favoritesModalCenter">
+              Favorites
+            </button>
             <button type="button" id="changepw-btn" class="changepw-btn btn btn-secondary signed_in" data-toggle="modal" data-target="#changepwModalCenter">
               Change Password
             </button>
@@ -61,6 +63,7 @@
           <div id="font-display" class="row footer all-fonts"></div>
         </div>
 
+      <!-- Sign Up Modal -->
       <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -85,6 +88,7 @@
         </div>
       </div>
 
+      <!-- Change Password Modal -->
       <div class="modal fade" id="changepwModalCenter" tabindex="-1" role="dialog" aria-labelledby="changepwModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -108,6 +112,7 @@
         </div>
       </div>
 
+      <!-- Favorites Modal -->
       <div class="modal fade bd-example-modal-lg" id="favoritesModalCenter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -118,17 +123,23 @@
               </button>
             </div>
             <div class="modal-body">
+              <div id="favorite-display" class="row"></div>
+
+              <button type="button" id="favorites-index" class="signed_in btn btn-primary text-light">
+                View My Favorites
+              </button>
+
               <form id="show-favorite">
-                Show Favorite
+                Show a Favorite
                 <input type="number" name="favorites[id]" placeholder="Favorite ID">
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
               </form>
 
               <form id="create-favorite">
-                Creat Favorite
+                Create a Favorite
                 <input type="number" name="favorite[font_id]" placeholder="Font ID">
                 <input type="text" name="favorite[project]" placeholder="Project">
-                <button type="submit">Add</button>
+                <button type="submit" class="btn btn-primary text-light">Add</button>
               </form>
 
               <form id="update-favorite">
@@ -136,16 +147,14 @@
                 <input type="number" name="id" placeholder="Favorite ID">
                 <input type="number" name="favorite[font_id]" placeholder="Font ID">
                 <input type="text" name="favorite[project]" placeholder="Project">
-                <button type="submit">Update</button>
+                <button type="submit" class="btn btn-secondary">Update</button>
               </form>
 
               <form id="delete-favorite">
                 Remove a Favorite
                 <input type="number" name="id" placeholder="Favorite ID">
-                <button type="submit">Remove</button>
+                <button type="submit" class="btn btn-primary text-light">Remove</button>
               </form>
-
-              <div id="favorite-display" class="row"></div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
