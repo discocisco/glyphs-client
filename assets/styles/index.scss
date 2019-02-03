@@ -1,7 +1,7 @@
 $enable-gradients: true;
 @import './colors';
 
-$btn-border-radius: 1.35rem;
+// $btn-border-radius: 0;
 $theme-colors: (
   'primary': $carrot-orange,
   'secondary': $pantone-pink,
@@ -15,10 +15,31 @@ $theme-colors: (
 @import './typography';
 @import './theme';
 
+body {
+  background-attachment: fixed;
+  background-image: url('public/img/TheHelixNebula.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.container-fluid {
+  justify-content: center;
+  min-height: 100%;
+}
+
+.font-view-tool {
+  background-color: $black-30;
+  border: 2px solid $white;
+  color: $white;
+  font-size: 4vmin;
+  text-align: center;
+}
+
 .header {
   align-items: flex-end;
   justify-content: space-between;
-  margin: 10px 5px;
+  margin: 10px 0 0;
+  padding: 0;
 }
 
 .authentification {
@@ -30,8 +51,19 @@ $theme-colors: (
   }
 }
 
-.container {
+.content {
   color: $white;
+  text-align: center;
+}
+
+.footer {
+  background-color: $black-30;
+  color: $white;
+  text-align: left;
+}
+
+.footer-btn {
+  justify-content: center;
 }
 
 .appname {
@@ -59,21 +91,4 @@ $theme-colors: (
 //
 // div {
 //   border: 1px solid $black;
-// }
-
-body {
-  background-attachment: fixed;
-  background-image: url('public/img/TheHelixNebula.png');
-  background-position: center;
-  background-size: cover;
-}
-
-.font-view-tool {
-  background-color: $black-30;
-  border: 2px solid $white;
-  font-size: 4vmin;
-}
-
-// .signin-form {
-//   text-align: center;
 // }
