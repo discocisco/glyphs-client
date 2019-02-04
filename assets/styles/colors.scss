@@ -1,10 +1,26 @@
 $black: #000;
+$black-10: rgba(0, 0, 0, .1);
 $black-30: rgba(0, 0, 0, .3);
+$black-60: rgba(0, 0, 0, .6);
+$blue-sapphire: #035e7b;
 $carrot-orange: #e98a15;
 $light-cyan: #d2fdff;
+$linen: #f7f3e3;
 $maya-blue: #69ddff;
 $neon-carrot: #ffa354;
+$outer-space: #435058;
 $pansy-purple: #59114d;
 $pantone-pink: #d84797;
 $pink: #ffc0cb;
+$roman-silver: #848c8e;
+$rusty-red: #db324d;
 $white: #fff;
+
+$theme-colors: (
+  'primary': $outer-space,
+  'secondary': $roman-silver,
+  'success': $blue-sapphire,
+  'danger': $rusty-red,
+  'info': $blue-sapphire,
+  'warning': $light-cyan
+);

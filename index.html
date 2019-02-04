@@ -17,24 +17,26 @@
         <!--Authentificaion row-->
         <div class="header row">
           <!--Creating Profile section-->
-          <div class="profile-create col-12 col-md-6">
+          <!--col-12 col-md-6-->
+          <div class="profile-create">
             <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
               Create A Profile!
             </button>
           </div>
 
           <!--Signing in, out, changing password, and viewing favorites-->
-          <div class="authentification col-12 col-md-6">
+          <!--col-md-6-->
+          <div class="authentification">
             <form id="signin-form" class="signin-form signed_out">
               <input type="email" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
               <button type="submit" class="btn btn-primary text-light">Log in</button>
             </form>
 
-            <button type="button" id="favorites-btn" class="signed_in btn btn-primary text-light" data-toggle="modal" data-target="#favoritesModalCenter">
+            <button type="button" id="favorites-btn" class="signed_in btn btn-secondary" data-toggle="modal" data-target="#favoritesModalCenter">
               Favorites
             </button>
-            <button type="button" id="changepw-btn" class="changepw-btn btn btn-secondary signed_in" data-toggle="modal" data-target="#changepwModalCenter">
+            <button type="button" id="changepw-btn" class="changepw-btn btn btn-primary text-light signed_in" data-toggle="modal" data-target="#changepwModalCenter">
               Change Password
             </button>
             <button type="button" id="signout-btn" class="signout-btn btn btn-danger signed_in">Sign-Out</button>
@@ -46,21 +48,22 @@
           <div class="col-12">
             <h1 class="appname">Glyphs</h1>
           </div>
-          <div id="user-message" class="col-12"></div>
+          <div id="user-message" class="col-12 user-message"></div>
         </div>
 
         <!--Font viewing tool-->
         <div id="keyboard" class="row">
-          <div class="form-group col-12 col-md-3">
-            <select class="form-control btn-light" id="select-font">
-              <option disabled selected>Choose a font to try out...</option>
+          <div class="form-group col-12 col-md-2">
+            <select class="form-control btn-info" id="select-font">
+              <option disabled selected>Choose a font...</option>
             </select>
           </div>
-          <div id="font-input" class="col-12 col-md-3 font-view-tool" contenteditable="true">Sample your font.</div>
+          <div id="font-input" class="col-12 col-md-4 font-view-tool" contenteditable="true">Edit me!</div>
           <div id="test-font" class="col-12 col-md-5 test-font font-view-tool"></div>
-          <div class="col-12 col-md-1 font-fav">
-            <button type="button" class="btn btn-secondary">Save!</button>
-          </div>
+          <!--Placeholder for `save` feature to be added later-->
+          <!-- <div class="col-12 col-lg-1 font-fav">
+            <button type="button" class="btn btn-info">Save!</button>
+          </div> -->
         </div>
       </div>
 
@@ -77,7 +80,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-dark" id="signupModalCenterTitle">Sign Up Form</h5>
+              <h5 class="modal-title" id="signupModalCenterTitle">Sign Up Form</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -102,7 +105,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-dark" id="changepwModalCenterTitle">Change Password</h5>
+              <h5 class="modal-title" id="changepwModalCenterTitle">Change Password</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -131,10 +134,10 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <table class="table table-hover table-responsive">
+            <div class="modal-body favorite-content">
+              <table class="table table-hover table-light table-responsive-md">
                 <caption id="favorite-display"></caption>
-                <thead>
+                <thead class="thead-dark">
                   <tr>
                     <th scope="col">ID#</th>
                     <th scope="col">Font Name</th>
@@ -147,7 +150,7 @@
                 </tbody>
               </table>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer favorites-footer">
               <form id="show-favorite">
                 Show a Favorite
                 <input type="number" name="favorites[id]" placeholder="Favorite ID">

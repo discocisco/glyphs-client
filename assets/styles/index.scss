@@ -1,16 +1,5 @@
 $enable-gradients: true;
 @import './colors';
-
-// $btn-border-radius: 0;
-$theme-colors: (
-  'primary': $carrot-orange,
-  'secondary': $pantone-pink,
-  'success': $pink,
-  'danger': $pansy-purple,
-  'info': $maya-blue,
-  'warning': $light-cyan
-);
-
 @import '~bootstrap/scss/bootstrap';
 @import './typography';
 @import './theme';
@@ -22,14 +11,12 @@ html {
 
 body {
   background-attachment: fixed;
-  // background-image: url('public/img/TheHelixNebula.png');
+  background-color: $linen;
   background-position: center;
   background-size: cover;
   display: grid;
   min-height: 100%;
-  overflow: hidden;
 }
-
 
 .container-fluid {
   justify-content: center;
@@ -37,16 +24,31 @@ body {
 
 .font-view-tool {
   background-color: $black-30;
-  border: 2px solid $white;
-  color: $white;
-  font-size: 4vmin;
+  border: 2px solid $outer-space;
+  border-radius: 15px;
+  font-size: 4vmax;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+#keyboard {
+  justify-content: center;
+}
+
+.form-group {
+  align-self: center;
+  margin: 10px 0;
+}
+
+.font-fav {
+  align-self: center;
   text-align: center;
 }
 
 .header {
   align-items: flex-end;
   justify-content: space-between;
-  margin: 10px 0 0;
+  margin: 10px 0;
   padding: 0;
 }
 
@@ -60,12 +62,12 @@ body {
 }
 
 .content {
-  color: $white;
+  // color: $white;
   text-align: center;
 }
 
 .footer {
-  background-color: $black-30;
+  background-color: $black-60;
   color: $white;
   text-align: left;
 }
@@ -74,16 +76,36 @@ body {
   justify-content: center;
 }
 
-.font-fav {
-  align-items: center;
-  justify-content: center;
-}
-
 .appname {
+  color: $blue-sapphire;
   font-family: 'Montserrat Subrayada';
   font-size: 12vmin;
   text-align: center;
-  text-shadow: 1px 2px 10px $pink;
+  text-shadow: 1px 2px 10px $outer-space;
+}
+
+.user-message {
+  color: $blue-sapphire;
+  font-family: 'Poppins';
+  font-size: 2vmax;
+  margin: 10px;
+}
+
+.favorites-footer {
+  align-items: flex-start;
+}
+
+.modal-header {
+  background-color: $roman-silver;
+  color: $white;
+}
+
+.modal-content {
+  background-color: $linen;
+}
+
+table {
+  background-color: $white;
 }
 
 .push-to-bottom {
