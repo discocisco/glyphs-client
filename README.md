@@ -4,8 +4,8 @@
 
 Glyphs is a web application for developers or anyone interested in browsing specific font styles in real-time. The back-end is developed using Rails specifically to call SQL commands using Postgresql. The front-end is developed using JavaScript and jQuery commands to make calls to the API and display changes for the viewer. Anyone is able to type a sample input of text and view it displayed in a font available through the options provided. To save a font as their favorite, users will have to create an account and sign-in. All accounts, fonts, and favorites are stored using the API.
 
-[View the client here!](https://discocisco.github.io/glyphs-client)
-[View the API here!](https://font-glyphs.herokuapp.com)
+- [View the client here!](https://discocisco.github.io/glyphs-client)
+- [View the API here!](https://font-glyphs.herokuapp.com)
 
 ## Technologies used
 
@@ -19,7 +19,7 @@ Glyphs is a web application for developers or anyone interested in browsing spec
 - Handlebars
 - Git
 - cURL
-- API [(view the repo here.](https://github.com/discocisco/glyphs-api)
+- API [(view the repo here.)](https://github.com/discocisco/glyphs-api)
 
 ## Development process and strategy
 
