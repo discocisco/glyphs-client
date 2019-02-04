@@ -151,33 +151,41 @@
               </table>
             </div>
             <div class="modal-footer favorites-footer">
-              <form id="show-favorite">
-                Show a Favorite
-                <input type="number" name="favorites[id]" placeholder="Favorite ID">
-                <button type="submit" class="btn btn-secondary">Show</button>
-                <button type="button" id="show-all" class="btn btn-secondary">Show All</button>
-              </form>
+              <div>
+                <form id="show-favorite">
+                  <h6>Show a Favorite</h6>
+                  <input type="number" name="favorites[id]" placeholder="Favorite ID">
+                  <button type="submit" class="btn btn-secondary">Show</button>
+                  <button type="button" id="show-all" class="btn btn-secondary">Show All</button>
+                </form>
+              </div>
 
-              <form id="create-favorite">
-                Create a Favorite
-                <input type="number" name="favorite[font_id]" placeholder="Font ID">
-                <input type="text" name="favorite[project]" placeholder="Project">
-                <button type="submit" class="btn btn-primary text-light">Add</button>
-              </form>
+              <div>
+                <form id="create-favorite">
+                  <h6>Create a Favorite</h6>
+                  <input type="number" name="favorite[font_id]" placeholder="Font ID">
+                  <input type="text" name="favorite[project]" placeholder="Project">
+                  <button type="submit" class="btn btn-primary text-light">Add</button>
+                </form>
+              </div>
 
-              <form id="update-favorite">
-                Change a Favorite
-                <input type="number" name="id" placeholder="Favorite ID">
-                <input type="number" name="favorite[font_id]" placeholder="Font ID">
-                <input type="text" name="favorite[project]" placeholder="Project">
-                <button type="submit" class="btn btn-secondary">Update</button>
-              </form>
+              <div>
+                <form id="update-favorite" class="col-12 col-md-2">
+                  <h6>Change a Favorite</h6>
+                  <input type="number" name="id" placeholder="Favorite ID">
+                  <input type="number" name="favorite[font_id]" placeholder="Font ID">
+                  <input type="text" name="favorite[project]" placeholder="Project">
+                  <button type="submit" class="btn btn-secondary">Update</button>
+                </form>
+              </div>
 
-              <form id="delete-favorite">
-                Remove a Favorite
-                <input type="number" name="id" placeholder="Favorite ID">
-                <button type="submit" class="btn btn-primary text-light">Remove</button>
-              </form>
+              <div>
+                <form id="delete-favorite" class="col-12 col-md-2">
+                  <h6>Remove a Favorite</h6>
+                  <input type="number" name="id" placeholder="Favorite ID">
+                  <button type="submit" class="btn btn-primary text-light">Remove</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
