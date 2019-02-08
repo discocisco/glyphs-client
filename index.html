@@ -13,36 +13,29 @@
     </head>
     <body>
       <!--Main Content-->
-      <div class="container-fluid">
-        <!--Authentificaion row-->
-        <div class="header row">
-          <!--Creating Profile section-->
-          <!--col-12 col-md-6-->
-          <div class="profile-create">
-            <button type="button" class="signed_out btn btn-secondary" data-toggle="modal" data-target="#signupModalCenter">
+      <div class="container-fluid navigation">
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="signed_out profile-create">
+            <button type="button" class="signed_out btn btn-info" data-toggle="modal" data-target="#signupModalCenter">
               Create A Profile!
             </button>
           </div>
+          <form id="signin-form" class="form-inline signin-form signed_out">
+            <input type="email" class="form-control mr-sm-2" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control mr-sm-2" name="credentials[password]" placeholder="Password">
+            <button type="submit" class="btn btn-outline-info text-light my-2 my-sm-0">Log in</button>
+          </form>
+          <button type="button" id="changepw-btn" class="changepw-btn btn btn-outline-info text-light signed_in" data-toggle="modal" data-target="#changepwModalCenter">
+            Change Password
+          </button>
+          <button type="button" id="favorites-btn" class="signed_in btn btn-info" data-toggle="modal" data-target="#favoritesModalCenter">
+            My Favorites
+          </button>
+          <button type="button" id="signout-btn" class="signout-btn btn btn-outline-danger signed_in">Sign-Out</button>
+        </nav>
+      </div>
 
-          <!--Signing in, out, changing password, and viewing favorites-->
-          <!--col-md-6-->
-          <div class="authentification">
-            <form id="signin-form" class="signin-form signed_out">
-              <input type="email" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <button type="submit" class="btn btn-primary text-light">Log in</button>
-            </form>
-
-            <button type="button" id="favorites-btn" class="signed_in btn btn-secondary" data-toggle="modal" data-target="#favoritesModalCenter">
-              Favorites
-            </button>
-            <button type="button" id="changepw-btn" class="changepw-btn btn btn-primary text-light signed_in" data-toggle="modal" data-target="#changepwModalCenter">
-              Change Password
-            </button>
-            <button type="button" id="signout-btn" class="signout-btn btn btn-danger signed_in">Sign-Out</button>
-          </div>
-        </div>
-
+      <div class="container-fluid">
         <!--Application title-->
         <div class="row content">
           <div class="col-12">
@@ -54,12 +47,12 @@
         <!--Font viewing tool-->
         <div id="keyboard" class="row">
           <div class="form-group col-12 col-md-2">
-            <select class="form-control btn-info" id="select-font">
+            <select class="form-control btn-info text-light" id="select-font">
               <option disabled selected>Choose a font...</option>
             </select>
           </div>
-          <div id="font-input" class="col-12 col-md-4 font-view-tool" contenteditable="true">Edit me!</div>
-          <div id="test-font" class="col-12 col-md-5 test-font font-view-tool"></div>
+          <div id="font-input" class="col-12 col-md-4 font-view-tool" contenteditable="true">Input text here</div>
+          <div id="test-font" class="col-12 col-md-5 test-font font-view-tool open-sans-condensed">Output text here</div>
           <!--Placeholder for `save` feature to be added later-->
           <!-- <div class="col-12 col-lg-1 font-fav">
             <button type="button" class="btn btn-info">Save!</button>
@@ -70,7 +63,7 @@
       <!--Footer displaying all fonts-->
       <div class="container-fluid push-to-bottom">
         <div class="row footer-btn">
-          <button type="button" id="fonts-index" class="btn btn-dark text-light">All Fonts</button>
+          <button type="button" id="fonts-index" class="btn btn-dark btn-lg text-light">All Fonts</button>
         </div>
         <div id="font-display" class="row footer all-fonts"></div>
       </div>
