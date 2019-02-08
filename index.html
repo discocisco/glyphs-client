@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Glyphs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!--Main Content-->
+      <div class="container-fluid navigation">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <button class="navbar-toggler signbtn" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <!-- <div class="signed_out profile-create"> -->
+            <button type="button" class="signed_out signbtn btn btn-info" data-toggle="modal" data-target="#signupModalCenter">
+              Create A Profile!
+            </button>
+            <!-- </div> -->
+            <form id="signin-form" class="form-inline signin-form signed_out">
+              <input type="email" class="form-control mr-sm-2" name="credentials[email]" placeholder="Email">
+              <input type="password" class="form-control mr-sm-2" name="credentials[password]" placeholder="Password">
+              <button type="submit" class="signbtn btn btn-outline-info text-light my-2 my-sm-0">Log in</button>
+            </form>
+            <button type="button" id="changepw-btn" class="changepw-btn navbtn btn btn-outline-warning signed_in" data-toggle="modal" data-target="#changepwModalCenter">
+              Change Password
+            </button>
+            <button type="button" id="favorites-btn" class="signed_in navbtn btn btn-info" data-toggle="modal" data-target="#favoritesModalCenter">
+              My Favorites
+            </button>
+            <button type="button" id="signout-btn" class="signout-btn navbtn btn btn-outline-danger signed_in">Sign-Out</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container-fluid">
+        <!--Application title-->
+        <div class="row content">
+          <div class="col-12">
+            <h1 class="appname">Glyphs</h1>
+          </div>
+          <div id="user-message" class="col-12 user-message"></div>
+        </div>
+
+        <!--Font viewing tool-->
+        <div id="keyboard" class="keyboard row">
+          <div class="form-group col-12 col-md-2">
+            <select class="form-control btn-info text-light" id="select-font">
+              <option disabled selected>Choose a font...</option>
+            </select>
+          </div>
+          <div id="font-input" class="col-12 col-md-4 font-view-tool" contenteditable="true">Input text here</div>
+          <div id="test-font" class="col-12 col-md-5 test-font font-view-tool open-sans-condensed">Output text here</div>
+          <!--Placeholder for `save` feature to be added later-->
+          <!-- <div class="col-12 col-lg-1 font-fav">
+            <button type="button" class="btn btn-info">Save!</button>
+          </div> -->
+        </div>
+      </div>
+
+      <!--Footer displaying all fonts-->
+      <div class="container-fluid push-to-bottom">
+        <div class="row footer-btn">
+          <button type="button" id="fonts-index" class="fonts-index btn btn-dark btn-lg text-light active">All Fonts</button>
+        </div>
+        <div id="font-display" class="row footer all-fonts"></div>
+      </div>
+
+      <!-- Sign Up Modal -->
+      <div class="modal fade" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signupModalCenterTitle">Sign Up Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="signup-form">
+              <div class="modal-body">
+                <input type="email" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info">Submit</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Change Password Modal -->
+      <div class="modal fade" id="changepwModalCenter" tabindex="-1" role="dialog" aria-labelledby="changepwModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changepwModalCenterTitle">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="changepw-form">
+              <div class="modal-body">
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info">Submit</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorites Modal -->
+      <div class="modal fade bd-example-modal-lg" id="favoritesModalCenter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Favorites</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body favorite-content">
+              <table class="table table-hover table-light table-responsive-md">
+                <caption id="favorite-display"></caption>
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID#</th>
+                    <th scope="col">Font Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">URL</th>
+                  </tr>
+                </thead>
+                <tbody id="fav-table">
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer favorites-footer container-fluid">
+              <div class="row">
+                <form id="show-favorite" class="col-6 col-lg-3">
+                  <h6>Show a Favorite</h6>
+                  <input type="number" name="favorites[id]" placeholder="Favorite ID">
+                  <button type="submit" class="btn btn-info">Show</button>
+                  <button type="button" id="show-all" class="btn btn-info">Show All</button>
+                </form>
+
+                <form id="create-favorite" class="col-6 col-lg-3">
+                  <h6>Create a Favorite</h6>
+                  <input type="number" name="favorite[font_id]" placeholder="Font ID">
+                  <input type="text" name="favorite[project]" placeholder="Project">
+                  <button type="submit" class="btn btn-primary text-light">Add</button>
+                </form>
+
+                <form id="update-favorite" class="col-6 col-lg-3">
+                  <h6>Change a Favorite</h6>
+                  <input type="number" name="id" placeholder="Favorite ID">
+                  <input type="number" name="favorite[font_id]" placeholder="Font ID">
+                  <input type="text" name="favorite[project]" placeholder="Project">
+                  <button type="submit" class="btn btn-info">Update</button>
+                </form>
+
+                <form id="delete-favorite" class="col-6 col-lg-3">
+                  <h6>Remove a Favorite</h6>
+                  <input type="number" name="id" placeholder="Favorite ID">
+                  <button type="submit" class="btn btn-primary text-light">Remove</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
