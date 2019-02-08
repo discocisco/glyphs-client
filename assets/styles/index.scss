@@ -22,6 +22,20 @@ body {
   padding: 0;
 }
 
+.navbar-collapse {
+  justify-content: space-between;
+}
+
+.navbtn {
+  margin: 5px;
+  width: 175px;
+}
+
+.signbtn,
+.form-control {
+  margin: 5px;
+}
+
 .font-view-tool {
   background-color: $linen;
   border: 2px solid $black;
@@ -31,7 +45,7 @@ body {
   text-align: center;
 }
 
-#keyboard {
+.keyboard {
   justify-content: center;
 }
 
@@ -45,15 +59,7 @@ body {
   text-align: center;
 }
 
-.header {
-  align-items: flex-end;
-  justify-content: space-between;
-  margin: 10px 0;
-  // padding: 0;
-}
-
 .content {
-  // color: $white;
   text-align: center;
 }
 
@@ -85,10 +91,11 @@ body {
 .favorites-footer {
   align-items: flex-start;
   justify-content: flex-start;
+  padding: 0 10px 15px;
 }
 
 .modal-header {
-  background-color: $roman-silver;
+  background-color: $outer-space;
   color: $white;
 }
 
@@ -100,21 +107,16 @@ table {
   background-color: $white;
 }
 
-#fonts-index {
+.fonts-index {
   border-radius: 100px 100px 0 0;
   height: 55px;
-}
-
-.navigation {
-  align-self: flex-start;
 }
 
 .push-to-bottom {
   align-self: flex-end;
   font-size: 1.1rem;
-  // padding: 0 15px;
 
-  & #font-display {
-    padding: 15px 0 15px 20px;
+  & .footer {
+    padding: 15px 0 15px 40px;
   }
 }

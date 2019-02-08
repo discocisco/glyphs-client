@@ -14,24 +14,29 @@
     <body>
       <!--Main Content-->
       <div class="container-fluid navigation">
-        <nav class="navbar navbar-dark bg-dark">
-          <div class="signed_out profile-create">
-            <button type="button" class="signed_out btn btn-info" data-toggle="modal" data-target="#signupModalCenter">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <button class="navbar-toggler signbtn" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <!-- <div class="signed_out profile-create"> -->
+            <button type="button" class="signed_out signbtn btn btn-info" data-toggle="modal" data-target="#signupModalCenter">
               Create A Profile!
             </button>
+            <!-- </div> -->
+            <form id="signin-form" class="form-inline signin-form signed_out">
+              <input type="email" class="form-control mr-sm-2" name="credentials[email]" placeholder="Email">
+              <input type="password" class="form-control mr-sm-2" name="credentials[password]" placeholder="Password">
+              <button type="submit" class="signbtn btn btn-outline-info text-light my-2 my-sm-0">Log in</button>
+            </form>
+            <button type="button" id="changepw-btn" class="changepw-btn navbtn btn btn-outline-warning signed_in" data-toggle="modal" data-target="#changepwModalCenter">
+              Change Password
+            </button>
+            <button type="button" id="favorites-btn" class="signed_in navbtn btn btn-info" data-toggle="modal" data-target="#favoritesModalCenter">
+              My Favorites
+            </button>
+            <button type="button" id="signout-btn" class="signout-btn navbtn btn btn-outline-danger signed_in">Sign-Out</button>
           </div>
-          <form id="signin-form" class="form-inline signin-form signed_out">
-            <input type="email" class="form-control mr-sm-2" name="credentials[email]" placeholder="Email">
-            <input type="password" class="form-control mr-sm-2" name="credentials[password]" placeholder="Password">
-            <button type="submit" class="btn btn-outline-info text-light my-2 my-sm-0">Log in</button>
-          </form>
-          <button type="button" id="changepw-btn" class="changepw-btn btn btn-outline-info text-light signed_in" data-toggle="modal" data-target="#changepwModalCenter">
-            Change Password
-          </button>
-          <button type="button" id="favorites-btn" class="signed_in btn btn-info" data-toggle="modal" data-target="#favoritesModalCenter">
-            My Favorites
-          </button>
-          <button type="button" id="signout-btn" class="signout-btn btn btn-outline-danger signed_in">Sign-Out</button>
         </nav>
       </div>
 
@@ -45,7 +50,7 @@
         </div>
 
         <!--Font viewing tool-->
-        <div id="keyboard" class="row">
+        <div id="keyboard" class="keyboard row">
           <div class="form-group col-12 col-md-2">
             <select class="form-control btn-info text-light" id="select-font">
               <option disabled selected>Choose a font...</option>
@@ -63,7 +68,7 @@
       <!--Footer displaying all fonts-->
       <div class="container-fluid push-to-bottom">
         <div class="row footer-btn">
-          <button type="button" id="fonts-index" class="btn btn-dark btn-lg text-light">All Fonts</button>
+          <button type="button" id="fonts-index" class="fonts-index btn btn-dark btn-lg text-light active">All Fonts</button>
         </div>
         <div id="font-display" class="row footer all-fonts"></div>
       </div>
@@ -85,8 +90,8 @@
                 <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info">Submit</button>
               </div>
           </form>
           </div>
@@ -109,8 +114,8 @@
                 <input type="password" name="passwords[new]" placeholder="New Password">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info">Submit</button>
               </div>
           </form>
           </div>
@@ -143,37 +148,31 @@
                 </tbody>
               </table>
             </div>
-            <div class="modal-footer favorites-footer">
-              <div>
-                <form id="show-favorite">
+            <div class="modal-footer favorites-footer container-fluid">
+              <div class="row">
+                <form id="show-favorite" class="col-6 col-lg-3">
                   <h6>Show a Favorite</h6>
                   <input type="number" name="favorites[id]" placeholder="Favorite ID">
-                  <button type="submit" class="btn btn-secondary">Show</button>
-                  <button type="button" id="show-all" class="btn btn-secondary">Show All</button>
+                  <button type="submit" class="btn btn-info">Show</button>
+                  <button type="button" id="show-all" class="btn btn-info">Show All</button>
                 </form>
-              </div>
 
-              <div>
-                <form id="create-favorite">
+                <form id="create-favorite" class="col-6 col-lg-3">
                   <h6>Create a Favorite</h6>
                   <input type="number" name="favorite[font_id]" placeholder="Font ID">
                   <input type="text" name="favorite[project]" placeholder="Project">
                   <button type="submit" class="btn btn-primary text-light">Add</button>
                 </form>
-              </div>
 
-              <div>
-                <form id="update-favorite" class="col-12 col-md-2">
+                <form id="update-favorite" class="col-6 col-lg-3">
                   <h6>Change a Favorite</h6>
                   <input type="number" name="id" placeholder="Favorite ID">
                   <input type="number" name="favorite[font_id]" placeholder="Font ID">
                   <input type="text" name="favorite[project]" placeholder="Project">
-                  <button type="submit" class="btn btn-secondary">Update</button>
+                  <button type="submit" class="btn btn-info">Update</button>
                 </form>
-              </div>
 
-              <div>
-                <form id="delete-favorite" class="col-12 col-md-2">
+                <form id="delete-favorite" class="col-6 col-lg-3">
                   <h6>Remove a Favorite</h6>
                   <input type="number" name="id" placeholder="Favorite ID">
                   <button type="submit" class="btn btn-primary text-light">Remove</button>
